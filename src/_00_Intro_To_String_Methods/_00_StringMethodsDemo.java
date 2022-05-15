@@ -72,13 +72,13 @@ public class _00_StringMethodsDemo {
         // Method #1: starting from the first character on the left, keep
         //            searching for the character until the end of the string
         String substring = "to";
-        int numOccurances = 0;
-        index = str.indexOf("to");
-        while( index != -1 ) {
-            numOccurances++;
-            index = str.indexOf(substring, index + substring.length());
-        }
-        
+   	 int numOccurances = 0;
+  index = str.indexOf(substring);
+      while( index != -1 ) {
+          numOccurances++;
+  
+          index = str.indexOf(substring, index + substring.length());     
+      }
         System.out.println("1. The substring '" + substring + "' appeared: " + numOccurances +
                            " times in the string '" + str + "'");
         

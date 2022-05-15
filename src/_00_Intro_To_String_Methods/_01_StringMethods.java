@@ -56,45 +56,91 @@ public class _01_StringMethods {
     // You cannot assume there are no extra spaces around the name, but you can
     // assume there is only one space between the first and last name
     public static String lineLeader(String s1, String s2, String s3) {
-    	s1.trim();
-    	s2.trim();
-    	s3.trim();
-    	int index = s1.indexOf(' ');
-    	
-        return null;
+  s1 = 	s1.trim();
+   s2= 	s2.trim();
+  s3 =  	s3.trim();
+    	int index1 = s1.indexOf(' ');
+    	int index2 = s2.indexOf(' ');
+    	int index3 = s3.indexOf(' ');
+    	index1 = index1 + 1;
+    	index2 = index2 + 1;
+    	index3 = index3 + 1;
+    	char lastName1 = s1.charAt(index1);
+    	char lastName2 = s2.charAt(index2);
+    	char lastName3 = s3.charAt(index3);
+    	System.out.println(lastName1);
+    	System.out.println(lastName2);
+    	System.out.println(lastName3);
+if(lastName1<lastName2 && lastName1<lastName3) {
+	System.out.println(s1);
+	return s1;
+} else if(lastName2<lastName1 && lastName2<lastName3) {
+	System.out.println(s2);
+	return s2;
+} else if(lastName3<lastName1 && lastName3<lastName2) {
+	System.out.println(s3);
+	return s3;
+}
+return null;
     }
 
     // Return the sum of all numerical digits in the String
     public static int numeralSum(String s) {
-        return 0;
+    	int total = 0;
+          for( int i = 0; i < s.length(); i++ ) {
+        	 boolean isNum = Character.isDigit(s.charAt(i));
+        	 if(isNum) {
+        		 int newS = Integer.parseInt(s.substring(i, i+1));
+        		 total = total + newS;
+        	 }
+          }
+    		
+		
+        return total;
     }
 
     // Return the number of times String substring appears in String s
     public static int substringCount(String s, String substring) {
-        return 0;
+         int numOccurances = 0;
+       int   index = s.indexOf(substring);
+         while( index != -1 ) {
+             numOccurances++;
+             index = s.indexOf(substring, index + substring.length());
+         }
+        return numOccurances;
     }
 
     // Call Utilities.encrypt at the bottom of this file to encrypt String s
     public static String encrypt(String s, char key) {
-        return null;
+        return Utilities.encrypt(s.getBytes(), (byte)key);
     }
 
     // Call Utilities.decrypt at the bottom of this file to decrypt the
     // cyphertext (encrypted text)
     public static String decrypt(String s, char key) {
-        return null;
+    	
+        return Utilities.decrypt(s, (byte)key);
     }
 
     // Return the number of words in String s that end with String substring
     // You can assume there are no punctuation marks between words
     public static int wordsEndsWithSubstring(String s, String substring) {
-        return 0;
+    	int correctEnding = 0;
+    	 String[] words = s.split(" ");
+    	 for (int i = 0; i < words.length; i++) {
+			if(words[i].endsWith(substring)) {
+				correctEnding ++;
+			}
+		}
+return correctEnding;
     }
 
     // Given String s, return the number of characters between the first
     // occurrence of String substring and the final occurrence
     // You can assume that substring will appear at least twice
     public static int distance(String s, String substring) {
+String[]words =s.split(substring);
+
         return 0;
     }
 
