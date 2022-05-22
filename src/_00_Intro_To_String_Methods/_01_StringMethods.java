@@ -68,17 +68,11 @@ public class _01_StringMethods {
     	char lastName1 = s1.charAt(index1);
     	char lastName2 = s2.charAt(index2);
     	char lastName3 = s3.charAt(index3);
-    	System.out.println(lastName1);
-    	System.out.println(lastName2);
-    	System.out.println(lastName3);
 if(lastName1<lastName2 && lastName1<lastName3) {
-	System.out.println(s1);
 	return s1;
 } else if(lastName2<lastName1 && lastName2<lastName3) {
-	System.out.println(s2);
 	return s2;
 } else if(lastName3<lastName1 && lastName3<lastName2) {
-	System.out.println(s3);
 	return s3;
 }
 return null;
@@ -139,15 +133,53 @@ return correctEnding;
     // occurrence of String substring and the final occurrence
     // You can assume that substring will appear at least twice
     public static int distance(String s, String substring) {
+    	int numOfChars = 0;
 String[]words =s.split(substring);
-
-        return 0;
+if(words.length>2) {
+for(int i = 1; i < words.length -1; i++) {
+	String word = words[i];
+numOfChars = numOfChars + word.length();
+System.out.println(numOfChars);
+}
+return numOfChars;
+}else {
+	return 0;
+}
     }
 
     // Return true if String s is a palindrome
     // palindromes are words or phrases are read the same forward as backward.
     // HINT: ignore/remove all punctuation and spaces in the String
     public static boolean palindrome(String s) {
+    	String s1 = s.replaceAll(" ", "");
+    	System.out.println(s1);
+    	String s2 = s1.replaceAll(",", "");
+    	System.out.println(s2);
+    	String s3 = s2.replaceAll("-", "");
+    	System.out.println(s3);
+    	String s4 = s3.replaceAll("\\.", "");
+    	System.out.println(s4);
+    	String s5  = s4.replaceAll(":", "");
+    	System.out.println(s5);
+    	String s6 = s5.replaceAll("\\?", "");
+    	System.out.println(s6);
+    	String s7 = s6.toLowerCase();
+    	System.out.println(s7);
+    	for (int i = 0; i < s7.length(); i++) {
+    		//System.out.println(i);
+    		for(int j = s7.length()-1; j > -1; j--) {
+    			System.out.println(j);
+    	//		System.out.println(s7.charAt(i));
+    	//		System.out.println(s7.charAt(j));
+    		char 	iChar = s7.charAt(i);
+    		char   jChar = s7.charAt(j);
+    			if(iChar == jChar) {
+    				System.out.println("true");
+    			}else {
+    				return false;
+    			}
+    		}
+		}
         return true;
     }
 }
