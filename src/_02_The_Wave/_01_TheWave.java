@@ -2,6 +2,8 @@ package _02_The_Wave;
 
 import java.util.ArrayList;
 
+import org.omg.Messaging.SyncScopeHelper;
+
 public class _01_TheWave {
     /*
      * Background:
@@ -20,11 +22,21 @@ public class _01_TheWave {
      */
     
     public static ArrayList<String> wave(String str) {
+    	String lowStr = str.toLowerCase();
         String[] strArray = str.split("");
-        ArrayList<String> list = new ArrayList<String>();
-        for (int i = 0; i < strArray.length; i++) {
-			String s = strArray[i].toUpperCase();
+        ArrayList<String> wave = new ArrayList<String>();
+        for (int i = 0; i < str.length(); i++) {
+        	StringBuilder builder = new StringBuilder(lowStr);
+        	if(strArray[i].equalsIgnoreCase(" ")){
+        		
+        	}else {
+			builder.deleteCharAt(i);
+			builder.insert(i,strArray[i].toUpperCase());
+			System.out.println(builder.toString());
+String waveSequence = builder.toString();	
+wave.add(waveSequence);
+        	}
 		}
-        return null;
+        return wave;
     }
 }

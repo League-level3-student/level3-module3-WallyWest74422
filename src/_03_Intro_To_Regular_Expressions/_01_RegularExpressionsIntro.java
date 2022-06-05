@@ -17,6 +17,8 @@ public class _01_RegularExpressionsIntro {
      * Code method below! 
      */
     String emailRemover(String message) {
-        return null;
+    String Expression = "[@].+[.com]";
+    String output = message.replaceAll(Expression, "@mail.com");
+        return output;
     }
 }

@@ -21,7 +21,7 @@ public class _00_RegularExpressionsDemo {
      */
     
     public static void main(String[] args) {
-        final String testString = "Today, is the day we learn regular expressions!";
+        final String testString = "Today, is the day we learn regular expressions!"; 
         String regEx = "";
         String output = "";
         
